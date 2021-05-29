@@ -2,66 +2,84 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 
 namespace Selenium.DotNet.App
 {
-    [TestClass]
+   
     public class SeleniumUITest
     {
+        //private IWebDriver _driver;
 
-        public void GotoWebSite(string url, IWebDriver driver)
-        {
-            driver.Navigate().GoToUrl(url);
-            driver.Manage().Window.Maximize();
-        }
+        //[TestInitialize]
+        //public void BeforeEachTestCaseRuns()
+        //{
+        //    _driver = new ChromeDriver();
+        //    _driver.Manage().Window.Maximize();
+        //    _driver.Navigate().GoToUrl("https://www.espncricinfo.com");
+        //}
 
-        [TestMethod]
-        public void OpenCricInfoWebSite()
-        {
-            IWebDriver driver = new ChromeDriver();
-            GotoWebSite("https://www.espncricinfo.com/", driver);
+        //[TestCleanup]
+        //public void AfterEachTestCaseRuns()
+        //{
+        //    _driver.Quit();
+        //}
+       
 
-            IWebElement navBar = driver.FindElement(By.Id("navbarSupportedContent"));
+        //public void OpenCricInfoWebSite()
+        //{
+        //    IWebElement navBar = _driver.FindElement(By.Id("navbarSupportedContent"));
 
-            string navBarContent = navBar.Text;
+        //    string navBarContent = navBar.Text;
 
-            Assert.AreEqual(true, navBarContent.Contains("Live Scores"));
+        //    Assert.AreEqual(true, navBarContent.Contains("Live Scores"));
+        //}
 
-            //driver.Quit();
-        }
+        //public void PointsTable()
+        //{
+        //    //http://xpather.com/
+        //    IWebElement anc = _driver.FindElement(By.XPath("//section[@id='main-container']//div[2]//ul[starts-with(@class,'widget-item')]//a[starts-with(@title,'IPL 2021')]"));
+        //    anc.Click();
 
-        [TestMethod]
-        public void PointsTable()
-        {
-            //http://xpather.com/
+        //    WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(5));
+        //    IWebElement pointsElement = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.XPath("//section[@id='main-container']//div[@class='widget-container']//div[1]//table//tbody//tr[3]//td[5]")));
 
-            IWebDriver driver = new ChromeDriver();
-            GotoWebSite("https://www.espncricinfo.com/", driver);
+        //    Assert.AreEqual("10", pointsElement.Text);
+        //}
 
-            // IWebElement anchorAbsoulutePath = driver.FindElement(By.XPath("/html/body/div/section/section/div[1]/div[2]/div/div[1]/div[1]/div/div[1]/div[1]/div[2]/ul/li[1]/a"));
-            IWebElement anc = driver.FindElement(By.XPath("//section[@id='main-container']//div[2]//ul[starts-with(@class,'widget-item')]//a[starts-with(@title,'IPL 2021')]"));
-            anc.Click();
 
-            //IWebElement pointsElement = driver.FindElement(By.XPath("/html/body/div[1]/section/section/div[1]/div[2]/div/div/div[2]/div/div[2]/div[2]/div/div/table/tbody/tr[3]/td[5]"));
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(5));
-            IWebElement pointsElement = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.XPath("//section[@id='main-container']//div[@class='widget-container']//div[1]//table//tbody//tr[3]//td[5]")));
+        ////public void TestDropdown()
+        ////{
+        ////    IWebDriver driver = new ChromeDriver();
+        ////    GotoWebSite("https://www.facebook.com/campaign/landing.php", driver);
 
-            Assert.AreEqual("10", pointsElement.Text);
-        }
+        ////    var monthDropdown = driver.FindElement(By.Id("month"));
+        ////    var selectElement = new SelectElement(monthDropdown);
 
-        [TestMethod]
-        public void TestDropdown()
-        {
-            IWebDriver driver = new ChromeDriver();
-            GotoWebSite("https://www.facebook.com/campaign/landing.php", driver);
+        ////    selectElement.SelectByValue("11");
+        ////    //selectElement.SelectByText("August");
 
-            var monthDropdown = driver.FindElement(By.Id("month"));
-            var selectElement = new SelectElement(monthDropdown);
+        ////    CloseBrowser(driver);
+        ////}
 
-            selectElement.SelectByValue("11");
-            //selectElement.SelectByText("August");
-        }
+        //public void Menubar_Navigation()
+        //{
+        //    WebDriverWait wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(10));
+        //    var element = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.XPath("//*[@id=\"navbarSupportedContent\"]/ul[1]/li[3]")));
 
+        //    Actions action = new Actions(_driver);
+        //    action.MoveToElement(element).Perform();
+
+        //    System.Threading.Thread.Sleep(4000);//Waiting for the menu to be displayed    
+
+        //    IWebElement anc = _driver.FindElement(By.XPath("//*[@id=\"navbarSupportedContent\"]/ul[1]/li[3]/div/div/ul[1]/li[4]"));
+        //    anc.Click();
+
+        //    wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(5));
+        //    IWebElement headerText = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(By.XPath("//*[@id=\"__next\"]/div[2]/div/nav/div/a/div[2]/div/div[2]/h5")));
+
+        //    Assert.AreEqual("India", headerText.Text);
+        //}
     }
 }

@@ -59,8 +59,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="POM\HomePage.cs" />
+    <Compile Include="POM\PointsPage.cs" />
     <Compile Include="SeleniumUITest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestCases\TestHomePage.cs" />
+    <Compile Include="TestCases\TestPointsPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
