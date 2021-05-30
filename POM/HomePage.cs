@@ -1,19 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
 
-namespace Selenium.DotNet.App.POM
+namespace POM
 {
     public class HomePage
     {
         private IWebDriver _driver;
         private By navBarBy = By.Id("navbarSupportedContent");
-        private By pointsPageBy = By.XPath("//section[@id='main-container']//div[2]//ul[starts-with(@class,'widget-item')]//a[starts-with(@title,'IPL 2021')]");
+        private By pointsPageBy = By.XPath("//section[@id='main-container']/div[1]/div[2]/div/div[1]/div[1]/div/div[1]/div[1]/div[2]/ul/li[1]/a");
+        // private By pointsPageBy = By.XPath("//section[@id='main-container']//div[2]//ul[starts-with(@class,'widget-item')]//a[starts-with(@title,'IPL 2021')]");
         private By navDropDownBy = By.XPath("//*[@id=\"navbarSupportedContent\"]/ul[1]/li[3]");
         private By navDropDownPaneBy = By.XPath("//*[@id=\"navbarSupportedContent\"]/ul[1]/li[3]/div/div/ul[1]/li[4]");
         private By navDropDownDataBy = By.XPath("//*[@id=\"__next\"]/div[2]/div/nav/div/a/div[2]/div/div[2]/h5");
@@ -28,18 +25,18 @@ namespace Selenium.DotNet.App.POM
             return _driver.Title;
         }
 
-        public string NavigationBar()
+        public string CheckNavigationBar()
         {
             IWebElement navBar = _driver.FindElement(navBarBy);
 
             return navBar.Text;
         }
 
-        public string NavigateToPointsPage()
+        public void NavigateToPointsPage()
         {
+            By points = By.XPath("//*[@id=\"main-container\"]/div[1]/div[2]/div/div[1]/div[1]/div/div[1]/div[2]/div[2]/ul/li[1]/a");
             IWebElement linkPointsPage = _driver.FindElement(pointsPageBy);
             linkPointsPage.Click();
-            return _driver.Title;
         }
 
         public string DropDownNavbar()
