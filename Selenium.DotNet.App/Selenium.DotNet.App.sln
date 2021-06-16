@@ -7,10 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Selenium.DotNet.App", "Sele
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POM", "POM\POM.csproj", "{138BFDC5-DE54-4294-98A6-7E2BE18D4CE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestAPITesting", "RestAPITesting\RestAPITesting.csproj", "{B266D762-EEF3-4C59-9981-0EB4841AFC5B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.Models", "API.Models\API.Models.csproj", "{94B6466B-EB96-4A1F-8F9C-7D012F59B5D0}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,14 +21,6 @@ Global
 		{138BFDC5-DE54-4294-98A6-7E2BE18D4CE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{138BFDC5-DE54-4294-98A6-7E2BE18D4CE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{138BFDC5-DE54-4294-98A6-7E2BE18D4CE1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B266D762-EEF3-4C59-9981-0EB4841AFC5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B266D762-EEF3-4C59-9981-0EB4841AFC5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B266D762-EEF3-4C59-9981-0EB4841AFC5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B266D762-EEF3-4C59-9981-0EB4841AFC5B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{94B6466B-EB96-4A1F-8F9C-7D012F59B5D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{94B6466B-EB96-4A1F-8F9C-7D012F59B5D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{94B6466B-EB96-4A1F-8F9C-7D012F59B5D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{94B6466B-EB96-4A1F-8F9C-7D012F59B5D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
