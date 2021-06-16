@@ -45,6 +45,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiEndPoints.cs" />
+    <Compile Include="HttpClientApiConnection.cs" />
+    <Compile Include="IApiConnection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

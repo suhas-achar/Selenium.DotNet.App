@@ -14,48 +14,48 @@ namespace RestAPITesting
     public class ApiTester
     {
         private string _uri;
-        private HttpClient _httpClient;
-        IAssertWrapper _assertWrapper;
+        private IAssertWrapper _assertWrapper;
+        private IApiConnection _apiConnection;
+        private ApiEndPoints _apiEndPoints;
 
         [TestInitialize]
         public void CreateHttpClient()
         {
             _uri = "https://jsonplaceholder.typicode.com";
-            _httpClient = new HttpClient();
             _assertWrapper = new MSTestAssertWrapper();
-            Console.WriteLine("ClassInsitialze");
+            _apiConnection = new HttpClientApiConnection();
+            _apiEndPoints = new ApiEndPoints(_apiConnection);
         }
 
 
+        /// <summary>
+        /// This particaular test case (Asynchronously_Runnig_Test) runs Asynchronously. 
+        /// Means, control go back to CLR once it reachere await
+        /// Note the "async" keyword added to test method
+        /// Alos the return type is "Task"
+        /// </summary>
+        /// <returns>Task</returns>
         [TestMethod]
-        public async Task GET_Direct_Request_Approach1()
+        public async Task Asynchronously_Runnig_Test()
         {
-            //This test case runs Asynchronously.
-            string resString = await _httpClient.GetStringAsync(_uri + "/users/1");
-
-            User user = JsonConvert.DeserializeObject<User>(resString);
+            User user = await _apiEndPoints.GET_Using_GetAsync(_uri + "/users/1");
 
             _assertWrapper.AreEqual("Sincere@april.biz", user.email);
         }
 
         [TestMethod]
-        public void GET_Direct_Request_Approach2()
+        public void GET_RestApi_Test_1()
         {
-            //This test case runs Synchronously.
-            Task<HttpResponseMessage> reshttp = _httpClient.GetAsync(_uri + "/users/1");
+            Task<User> user = _apiEndPoints.GET_Using_GetAsync(_uri+"/users/1");
 
-            Task<string> resString = reshttp.Result.Content.ReadAsStringAsync();
-
-            User user = JsonConvert.DeserializeObject<User>(resString.Result);
-
-            _assertWrapper.AreEqual("Sincere@april.biz", user.email);
-        }         
-
+            _assertWrapper.AreEqual("Sincere@april.biz", user.Result.email);
+        }
 
         [TestMethod]
-        public void GET_RestApi_Test()
+        public void GET_RestApi_Test_2()
         {
-            Task<User> user = ApiEndPoints.GET_Using_GetStringAsync();
+            Task<User> user = _apiEndPoints.GET_Using_GetStringAsync(_uri + "/users/1");
+
             _assertWrapper.AreEqual("Sincere@april.biz", user.Result.email);
         }
 
