@@ -1,6 +1,7 @@
 ﻿using API.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
+using REST.API;
 using RestAPITesting.Utility;
 using Selenium.DotNet.App;
 using System;
@@ -26,9 +27,8 @@ namespace RestAPITesting
         }
 
 
-
         [TestMethod]
-        public async Task GET_Request_Approach1()
+        public async Task GET_Direct_Request_Approach1()
         {
             //This test case runs Asynchronously.
             string resString = await _httpClient.GetStringAsync(_uri + "/users/1");
@@ -38,9 +38,8 @@ namespace RestAPITesting
             _assertWrapper.AreEqual("Sincere@april.biz", user.email);
         }
 
-
         [TestMethod]
-        public void GET_Request_Approach2()
+        public void GET_Direct_Request_Approach2()
         {
             //This test case runs Synchronously.
             Task<HttpResponseMessage> reshttp = _httpClient.GetAsync(_uri + "/users/1");
@@ -50,6 +49,15 @@ namespace RestAPITesting
             User user = JsonConvert.DeserializeObject<User>(resString.Result);
 
             _assertWrapper.AreEqual("Sincere@april.biz", user.email);
+        }         
+
+
+        [TestMethod]
+        public void GET_RestApi_Test()
+        {
+            Task<User> user = ApiEndPoints.GET_Using_GetStringAsync();
+            _assertWrapper.AreEqual("Sincere@april.biz", user.Result.email);
         }
+
     }
 }

@@ -65,6 +65,10 @@
       <Project>{94b6466b-eb96-4a1f-8f9c-7d012f59b5d0}</Project>
       <Name>API.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\REST.API\REST.API.csproj">
+      <Project>{78fee4e1-0007-4953-8405-734af33c4663}</Project>
+      <Name>REST.API</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Selenium.DotNet.App\Selenium.DotNet.App.csproj">
       <Project>{d7188a3a-bed5-4fb8-9958-f1a309fa1f71}</Project>
       <Name>Selenium.DotNet.App</Name>
