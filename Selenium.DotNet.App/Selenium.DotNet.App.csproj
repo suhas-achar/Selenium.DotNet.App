@@ -45,15 +45,29 @@
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\MSTest.TestFramework.2.1.2\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="SeleniumExtras.WaitHelpers, Version=3.11.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetSeleniumExtras.WaitHelpers.3.11.0\lib\net45\SeleniumExtras.WaitHelpers.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="WebDriver, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.dll</HintPath>
     </Reference>
+    <Reference Include="WebDriver.Support, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.3.141.0\lib\net45\WebDriver.Support.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IAssertWrapper.cs" />
+    <Compile Include="SeleniumCommands\02_BrowserNavigationCommands.cs" />
+    <Compile Include="SeleniumCommands\04_FindElementCommands.cs" />
+    <Compile Include="SeleniumCommands\03_WebElementCommands.cs" />
+    <Compile Include="SeleniumCommands\01_WebDriverBrowserCommands.cs" />
+    <Compile Include="SeleniumCommands\05_CheckBox_RadioButton.cs" />
+    <Compile Include="SeleniumCommands\06_DropDown_MultiSelect.cs" />
+    <Compile Include="SeleniumCommands\07_Tables.cs" />
+    <Compile Include="SeleniumCommands\09_Waits.cs" />
     <Compile Include="TestCases\MSTestAssertWrapper.cs" />
     <Compile Include="TestCases\TestHomePage.cs" />
     <Compile Include="TestCases\TestPointsPage.cs" />
@@ -68,7 +82,9 @@
       <Name>POM</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="UI\TablePage.html" />
+  </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

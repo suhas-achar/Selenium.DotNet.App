@@ -5,6 +5,7 @@ using POM;
 
 namespace Selenium.DotNet.App.TestCases
 {
+    [Ignore]
     [TestClass]
     public class TestPointsPage
     {

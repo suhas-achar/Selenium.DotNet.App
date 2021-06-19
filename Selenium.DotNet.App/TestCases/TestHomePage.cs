@@ -6,6 +6,7 @@ using POM;
 
 namespace Selenium.DotNet.App.TestCases
 {
+    [Ignore]
     [TestClass]
     public class TestHomePage
     {
@@ -37,14 +38,14 @@ namespace Selenium.DotNet.App.TestCases
             _assertWrapper.AreEqual(true, title.Contains("Check Live Cricket Scores"));
         }
 
-        [TestMethod]
+        
+        [TestMethod]      
         public void CheckNavigationBarTest()
         {
             HomePage homePage = new HomePage(_driver);
             string content = homePage.CheckNavigationBar();
             _assertWrapper.AreEqual(true, content.Contains("Live Scores"));
         }
-
 
         [TestMethod]
         public void DropDownTest()
