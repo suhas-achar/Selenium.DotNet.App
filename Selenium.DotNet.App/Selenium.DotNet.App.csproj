@@ -68,6 +68,12 @@
     <Compile Include="SeleniumCommands\06_DropDown_MultiSelect.cs" />
     <Compile Include="SeleniumCommands\07_Tables.cs" />
     <Compile Include="SeleniumCommands\09_Waits.cs" />
+    <Compile Include="SeleniumCommands\10_AlertsAndPopups.cs" />
+    <Compile Include="SeleniumCommands\11_HttpProxy.cs" />
+    <Compile Include="SeleniumCommands\12_PageLoadStrategy.cs" />
+    <Compile Include="SeleniumCommands\13_MultipleBrowserWindows.cs" />
+    <Compile Include="SeleniumCommands\14_PageFactory.cs" />
+    <Compile Include="SeleniumCommands\POM_PageFactory.cs" />
     <Compile Include="TestCases\MSTestAssertWrapper.cs" />
     <Compile Include="TestCases\TestHomePage.cs" />
     <Compile Include="TestCases\TestPointsPage.cs" />

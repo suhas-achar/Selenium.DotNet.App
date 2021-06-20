@@ -8,6 +8,7 @@ using SeleniumExtras.WaitHelpers;
 namespace Selenium.DotNet.App.SeleniumCommands
 
 {
+    [Ignore]
     [TestClass]
     public class _09_Waits
     {
@@ -51,6 +52,7 @@ namespace Selenium.DotNet.App.SeleniumCommands
         }
 
         [TestMethod]
+        [Ignore]
         public void FluentWait_Test()
         {
             IWebDriver driver = new ChromeDriver();
