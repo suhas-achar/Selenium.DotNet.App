@@ -73,6 +73,8 @@
     <Compile Include="SeleniumCommands\12_PageLoadStrategy.cs" />
     <Compile Include="SeleniumCommands\13_MultipleBrowserWindows.cs" />
     <Compile Include="SeleniumCommands\14_PageFactory.cs" />
+    <Compile Include="SeleniumCommands\15_ActionClass.cs" />
+    <Compile Include="SeleniumCommands\16_MouseHover.cs" />
     <Compile Include="SeleniumCommands\POM_PageFactory.cs" />
     <Compile Include="TestCases\MSTestAssertWrapper.cs" />
     <Compile Include="TestCases\TestHomePage.cs" />

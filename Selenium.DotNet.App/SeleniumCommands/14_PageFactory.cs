@@ -10,10 +10,11 @@ using System.Threading.Tasks;
 
 namespace Selenium.DotNet.App.SeleniumCommands
 {
-  
+
+    [TestClass]
     public class _14_PageFactory
     {
-        
+
         public void PageFactory_Test()
         {
             IWebDriver driver = new ChromeDriver();
@@ -29,5 +30,6 @@ namespace Selenium.DotNet.App.SeleniumCommands
             loginPage.Password.SendKeys("Test@123");
             loginPage.Submit.Submit();
         }
+
     }
 }
